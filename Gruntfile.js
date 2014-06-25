@@ -35,6 +35,17 @@ module.exports = function(grunt) {
 			}
 		},
 
+		imagemin: {
+			default: {
+				files: [{
+					expand: true,
+					cwd: 'web/images',
+					src: ['**/*.{png,jpg,gif}'],
+					dest: 'web/images'
+				}]
+			}
+		},
+
 		notify: {
 			styles: {
 				options: {
@@ -46,6 +57,12 @@ module.exports = function(grunt) {
 				options: {
 					title: 'Scripts updated',
 					message: 'Project <%= pkg.name %> <%= pkg.version %> scripts updated.'
+				}
+			},
+			images: {
+				options: {
+					title: 'Images updated',
+					message: 'Project <%= pkg.name %> <%= pkg.version %> images updated.'
 				}
 			},
 			default: {
@@ -67,4 +84,6 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('styles', ['sass:default', 'notify:styles']);
 	grunt.registerTask('scripts', ['uglify:default', 'notify:scripts']);
+	grunt.registerTask('images', ['imagemin:default', 'notify:images']);
+
 };
