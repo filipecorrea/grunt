@@ -12,6 +12,32 @@ module.exports = function(grunt) {
 				' * \n' +
 				' * Date <%= grunt.template.today("yyyy-mm-dd HH:MM Z") %>\n' +
 				' */\n'
+		},
+
+		sass: {
+			default: {
+				options: {
+					style: 'compressed',
+					banner: '<%= tag.banner %>'
+				},
+				src: 'web/styles/style.scss',
+				dest: 'web/styles/style.min.css'
+			}
+		},
+
+		notify: {
+			styles: {
+				options: {
+					title: 'Styles updated',
+					message: 'Project <%= pkg.name %> <%= pkg.version %> styles updated.'
+				}
+			},
+			default: {
+				options: {
+					title: 'Build complete',
+					message: 'Project <%= pkg.name %> <%= pkg.version %> builded successfully.'
+				}
+			}
 		}
 
 	});
@@ -23,4 +49,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-notify');
 
+	grunt.registerTask('styles', ['sass:default', 'notify:styles']);
 };
