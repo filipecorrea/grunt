@@ -2,7 +2,17 @@ module.exports = function(grunt) {
 	
 	grunt.initConfig({
 		
-		pkg: grunt.file.readJSON('package.json')
+		pkg: grunt.file.readJSON('package.json'),
+
+		tag: {
+			banner: 
+				'/*!\n' +
+				' * <%= pkg.name %> <%= pkg.version %>\n' +
+				' * <%= pkg.homepage %>\n' +
+				' * \n' +
+				' * Date <%= grunt.template.today("yyyy-mm-dd HH:MM Z") %>\n' +
+				' */\n'
+		}
 
 	});
 
