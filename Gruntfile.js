@@ -99,4 +99,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('styles', ['sass:default', 'notify:styles']);
 	grunt.registerTask('scripts', ['uglify:default', 'notify:scripts']);
 	grunt.registerTask('images', ['compress:default', 'imagemin:default', 'notify:images']);
+
+	grunt.registerTask('default', ['sass:default', 'uglify:default', 'compress:default', 'imagemin:default', 'notify:default']);	
 };
