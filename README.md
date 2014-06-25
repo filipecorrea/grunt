@@ -2,13 +2,18 @@
 
 <img align="right" height="100" src="http://gruntjs.com/img/grunt-logo-no-wordmark.svg">
 
+Grunt framework for web projects using:
+
+- Sass extension for CSS
+- jQuery JavaScript library
+
 ### Documentation
 
 Visit the [Grunt](http://gruntjs.com/) website for complete documentation.
 
 ### Setup
 
-Grunt and Grunt plugins are installed and managed via npm, the [Node.js](http://nodejs.org/) package manager. Before setting up Grunt ensure that your npm is up-to-date (this might require sudo on certain systems).
+Grunt and Grunt plugins are installed and managed via npm, the [Node.js](http://nodejs.org/) package manager. Before setting up Grunt ensure that your npm is up-to-date (this might require `sudo` on certain systems).
 
 Update npm:
 
