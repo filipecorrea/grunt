@@ -33,6 +33,10 @@ Uglify JavaScript:
 
 	$ grunt scripts
 
+Create backup archive and compress images:
+
+	$ grunt images
+
 Run Grunt's default tasks:
 
 	$ grunt
