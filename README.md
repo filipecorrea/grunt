@@ -24,6 +24,14 @@ Install project dependencies:
 
 ### Run
 
+Compile Sass to compressed CSS:
+
+	$ grunt styles
+
+Uglify JavaScript:
+
+	$ grunt scripts
+
 Run Grunt's default tasks:
 
 	$ grunt
