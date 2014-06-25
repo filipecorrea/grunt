@@ -25,6 +25,10 @@ Install project dependencies:
 
 ### Run
 
+Make Grunt watch styles and scripts folders for any changes:
+
+	$ grunt
+
 Compile Sass to compressed CSS:
 
 	$ grunt styles
@@ -36,10 +40,6 @@ Uglify JavaScript:
 Create backup archive and compress images:
 
 	$ grunt images
-
-Make Grunt watch styles and scripts folders for any changes:
-
-	$ grunt
 
 ### Documentation
 
