@@ -25,11 +25,27 @@ module.exports = function(grunt) {
 			}
 		},
 
+		uglify: {
+			default: {
+				options: {
+					banner: '<%= tag.banner %>\n'
+				},
+				src: 'web/scripts/functions.js',
+				dest: 'web/scripts/functions.min.js'
+			}
+		},
+
 		notify: {
 			styles: {
 				options: {
 					title: 'Styles updated',
 					message: 'Project <%= pkg.name %> <%= pkg.version %> styles updated.'
+				}
+			},
+			scripts: {
+				options: {
+					title: 'Scripts updated',
+					message: 'Project <%= pkg.name %> <%= pkg.version %> scripts updated.'
 				}
 			},
 			default: {
@@ -50,4 +66,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-notify');
 
 	grunt.registerTask('styles', ['sass:default', 'notify:styles']);
+	grunt.registerTask('scripts', ['uglify:default', 'notify:scripts']);
 };
