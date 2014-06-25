@@ -79,10 +79,33 @@ module.exports = function(grunt) {
 					message: 'Project <%= pkg.name %> <%= pkg.version %> images updated.'
 				}
 			},
+			watch: {
+				options: {
+					title: 'Grunt is watching',
+					message: 'Grunt is watching project <%= pkg.name %> <%= pkg.version %>.'
+				}
+			},
 			default: {
 				options: {
 					title: 'Build complete',
 					message: 'Project <%= pkg.name %> <%= pkg.version %> builded successfully.'
+				}
+			}
+		},
+
+		watch: {
+			styles: {
+				files: ['web/styles/*.sass', 'web/styles/*.scss'],
+				tasks: ['sass:default', 'notify:styles'],
+				options: {
+					livereload: true
+				}
+			},
+			scripts: {
+				files: ['web/scripts/*.js'],
+				tasks: ['uglify:default', 'notify:scripts'],
+				options: {
+					livereload: true
 				}
 			}
 		}
@@ -99,6 +122,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('styles', ['sass:default', 'notify:styles']);
 	grunt.registerTask('scripts', ['uglify:default', 'notify:scripts']);
 	grunt.registerTask('images', ['compress:default', 'imagemin:default', 'notify:images']);
-
-	grunt.registerTask('default', ['sass:default', 'uglify:default', 'compress:default', 'imagemin:default', 'notify:default']);	
+	grunt.registerTask('default', ['notify:watch', 'watch']);
 };

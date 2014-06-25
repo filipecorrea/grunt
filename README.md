@@ -37,7 +37,7 @@ Create backup archive and compress images:
 
 	$ grunt images
 
-Run Grunt's default tasks:
+Make Grunt watch styles and scripts folders for any changes:
 
 	$ grunt
 
