@@ -7,10 +7,6 @@ Grunt framework for web projects using:
 - Sass extension for CSS
 - jQuery JavaScript library
 
-### Documentation
-
-Visit the [Grunt](http://gruntjs.com/) website for complete documentation.
-
 ### Setup
 
 Grunt and Grunt plugins are installed and managed via npm, the [Node.js](http://nodejs.org/) package manager. Before setting up Grunt ensure that your npm is up-to-date (this might require `sudo` on certain systems).
@@ -40,3 +36,7 @@ Uglify JavaScript:
 Run Grunt's default tasks:
 
 	$ grunt
+
+### Documentation
+
+Visit the [Grunt](http://gruntjs.com/) website for complete documentation.
