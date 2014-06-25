@@ -35,6 +35,20 @@ module.exports = function(grunt) {
 			}
 		},
 
+		compress: {
+			default: {
+				options: {
+					archive: 'web/images-backup.zip'
+				},
+				files: [{
+					expand: true,
+					cwd: 'web/images',
+					src: ['**'],
+					dest: ''
+				}]
+			}
+		},
+
 		imagemin: {
 			default: {
 				files: [{
@@ -84,6 +98,5 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('styles', ['sass:default', 'notify:styles']);
 	grunt.registerTask('scripts', ['uglify:default', 'notify:scripts']);
-	grunt.registerTask('images', ['imagemin:default', 'notify:images']);
-
+	grunt.registerTask('images', ['compress:default', 'imagemin:default', 'notify:images']);
 };
