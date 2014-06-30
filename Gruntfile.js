@@ -25,6 +25,10 @@ module.exports = function(grunt) {
 			}
 		},
 
+		jshint: {
+			default: ['web/scripts/functions.js']
+		},
+
 		uglify: {
 			default: {
 				options: {
@@ -103,7 +107,7 @@ module.exports = function(grunt) {
 			},
 			scripts: {
 				files: ['web/scripts/*.js'],
-				tasks: ['uglify:default', 'notify:scripts'],
+				tasks: ['jshint:default', 'uglify:default', 'notify:scripts'],
 				options: {
 					livereload: true
 				}
@@ -113,6 +117,7 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-compress');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
@@ -120,7 +125,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-notify');
 
 	grunt.registerTask('styles', ['sass:default', 'notify:styles']);
-	grunt.registerTask('scripts', ['uglify:default', 'notify:scripts']);
+	grunt.registerTask('scripts', ['jshint:default', 'uglify:default', 'notify:scripts']);
 	grunt.registerTask('images', ['compress:default', 'imagemin:default', 'notify:images']);
 	grunt.registerTask('default', ['notify:watch', 'watch']);
 };
