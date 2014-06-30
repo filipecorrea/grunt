@@ -18,3 +18,23 @@ body {
 // Section =========================================================================================
 // Aside ===========================================================================================
 // Footer ==========================================================================================
+
+// Smartphones and tablets =========================================================================
+
+// Smartphones
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {}
+
+// Smartphones (landscape)
+@media only screen and (min-width : 321px) {}
+
+// Smartphones (portrait)
+@media only screen and (max-width : 320px) {}
+
+// Tablets
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {}
+
+// Tablets (landscape)
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
+
+// Tablets (portrait)
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
