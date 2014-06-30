@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 		},
 
 		jshint: {
-			default: ['web/scripts/functions.js']
+			default: ['Gruntfile.js', 'web/scripts/functions.js']
 		},
 
 		uglify: {
