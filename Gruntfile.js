@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 					style: 'compressed',
 					banner: '<%= tag.banner %>'
 				},
-				src: 'web/styles/style.scss',
+				src: 'web/styles/src/style.scss',
 				dest: 'web/styles/style.min.css'
 			}
 		},
@@ -106,7 +106,7 @@ module.exports = function(grunt) {
 
 		watch: {
 			styles: {
-				files: ['web/styles/*.sass', 'web/styles/*.scss'],
+				files: ['web/styles/src/style.scss'],
 				tasks: ['sass:default', 'notify:styles'],
 				options: {
 					livereload: true
