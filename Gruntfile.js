@@ -113,8 +113,8 @@ module.exports = function(grunt) {
 				}
 			},
 			scripts: {
-				files: ['web/scripts/*.js'],
-				tasks: ['jshint:default', 'uglify:default', 'notify:scripts'],
+				files: ['web/scripts/**/*.js'],
+				tasks: ['jshint:default', 'concat:default', 'uglify:default', 'notify:scripts'],
 				options: {
 					livereload: true
 				}
