@@ -33,7 +33,7 @@ Compile Sass to compressed CSS:
 
 	$ grunt styles
 
-Validate and uglify JavaScript:
+Validate, concatenates and uglify JavaScript:
 
 	$ grunt scripts
 
