@@ -26,7 +26,14 @@ module.exports = function(grunt) {
 		},
 
 		jshint: {
-			default: ['Gruntfile.js', 'web/scripts/functions.js']
+			default: ['Gruntfile.js', 'web/scripts/src/*.js']
+		},
+
+		concat: {
+			default: {
+				src: ['web/scripts/lib/*.js', 'web/scripts/src/*.js'],
+				dest: 'web/scripts/script.js',
+			},
 		},
 
 		uglify: {
@@ -34,8 +41,8 @@ module.exports = function(grunt) {
 				options: {
 					banner: '<%= tag.banner %>\n'
 				},
-				src: 'web/scripts/functions.js',
-				dest: 'web/scripts/functions.min.js'
+				src: 'web/scripts/script.js',
+				dest: 'web/scripts/script.min.js'
 			}
 		},
 
@@ -118,6 +125,7 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-compress');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
@@ -125,7 +133,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-notify');
 
 	grunt.registerTask('styles', ['sass:default', 'notify:styles']);
-	grunt.registerTask('scripts', ['jshint:default', 'uglify:default', 'notify:scripts']);
+	grunt.registerTask('scripts', ['jshint:default', 'concat:default', 'uglify:default', 'notify:scripts']);
 	grunt.registerTask('images', ['compress:default', 'imagemin:default', 'notify:images']);
 	grunt.registerTask('default', ['notify:watch', 'watch']);
 };
