@@ -2,22 +2,106 @@
 
 @import '../lib/normalize';
 
+// Fonts ===========================================================================================
+
+@import 'http://fonts.googleapis.com/css?family=Roboto:400,500';
+
 // Variables =======================================================================================
 
-$font-stack: Helvetica, Arial, sans-serif;
+// Typography
+
+$font-stack: 'Roboto', Helvetica, Arial, sans-serif;
+$font-color: #333;
+
+.typography-title {
+	font: 20px $font-stack;
+	font-weight: 500;
+	line-height: 40px;
+}
+
+.typography-subtitle {
+	font: 16px $font-stack;
+	line-height: 24px;
+}
+
+.typography-body {
+	color: #333;
+	font: 14px $font-stack;
+	line-height: 24px;
+}
+
+.typography-caption {
+	font: 12px $font-stack;
+}
+
+// Shadows
+
+.z-depth-2 {
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,.16);
+}
+
+.z-depth-3 {
+	box-shadow: 0 2px 5px rgba(0,0,0,.26);
+}
+
+.z-depth-hover {
+	box-shadow: 0 8px 17px 0 rgba(0,0,0,.2);
+}
 
 // Global ==========================================================================================
 
 body {
-	font: 12px $font-stack;
-	background: blue\9; // IE 8 and below
+	@extend .typography-body;
+	background: #fafafa;
+	// background: blue\9; // IE 8 and below
 }
 
 // Header ==========================================================================================
+
+header {
+	@extend .z-depth-3;
+	height: 60px;
+	padding: 0 16px;
+	color: #fff;
+	line-height: 60px;
+	background: #333;
+}
+
 // Navigation ======================================================================================
+
+
+
 // Section =========================================================================================
+
+section {
+	width: 980px;
+	margin: 0 auto;
+	padding: 80px 0 0;
+	// background: #eee;
+
+	h1 {
+		@extend .typography-title;
+	}
+
+	p {
+		margin: 30px 0 0;
+	}
+}
+
 // Aside ===========================================================================================
+
+aside {
+	margin: 80px 0 0;
+	padding: 50px 16px;
+	background: #eee;
+}
+
 // Footer ==========================================================================================
+
+footer {
+	padding: 50px 16px;
+	background: #444;
+}
 
 // Smartphones and tablets =========================================================================
 
